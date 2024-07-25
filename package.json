@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@magiclabs.ai/magicbook-client": "0.7.11-canary",
+    "@magiclabs.ai/magicbook-client": "0.7.12-canary",
     "compression": "^1.7.4",
     "express": "^4.17.1"
   }

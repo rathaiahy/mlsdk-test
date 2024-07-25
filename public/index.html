@@ -249,6 +249,9 @@
         captureTime: "2024-07-22 12:39:19",
         filename: "20240626_091437.jpg",
         handle: "20240626_091437.jpg",
+        metadata: {
+          journalCore: "journalCore",
+        },
       };
       await designRequest.images.add(image20);
 
@@ -257,8 +260,12 @@
     		}); */
       window.addEventListener(
         "MagicBook.designRequestUpdated",
-        (designRequestEvent) => {
+        async (designRequestEvent) => {
           console.log(designRequestEvent.detail);
+          if (designRequestEvent.detail.state === "ready") {
+            console.log("Design request completed");
+            console.log(await designRequest.getJSON("snapfish"));
+          }
         }
       );
 
@@ -268,8 +275,6 @@
         embellishmentLevel: "few",
         textStickerLevel: "none",
       });
-
-      //console.log(await designRequest.getJSON());
     }
   </script>
   <div id="container"></div>
